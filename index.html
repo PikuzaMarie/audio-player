@@ -10,20 +10,22 @@
 <body>
     <div class="wrapper">
         <div class="music-player">
-            <img src="/assets/img/lemonade.png" alt="lemonade-cover">
+            <img class="cover" src="/assets/img/lemonade.png" alt="lemonade-cover">
             <h1>Don't hurt yourself</h1>
             <p>Beyonce</p>
             <audio>
                 <source src="/assets/audio/beyonce.mp3" type="audio/mp3">
             </audio>
             <input type="range" value="0" id="progress-bar">
-            <div class="current-time">0:00</div>
+            <div class="time">
+                <div class="current">0:00</div>
+                <div class="end">1:47</div>
+            </div>
             <div class="controls">
                 <button id="btn-backward"><img src="/assets/svg/backward.png" alt="icon-backward"></button>
                 <button id="btn-play"><img src="/assets/svg/play.png" alt="icon-play"></button>
                 <button id="btn-forward"><img src="/assets/svg/forward.png" alt="icon-forward"></button>
             </div>
-            <div class="end-time"></div>
             <!-- <div class="volume-wrapper">
                 <div class="volume-button">
                     <svg></svg>
