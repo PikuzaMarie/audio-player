@@ -6,7 +6,10 @@
 }
 :root {
     --dark: #00020c;
-    --white: #ffffff;
+    --white: #dfdad9;
+    --blue: #356f95;
+    --orange: #c53715;
+    --golden: #da8227;
 }
 body {
     width: 100%;
@@ -14,6 +17,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image:   linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)),
+                        url('/assets/img/cover-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .wrapper {
     width: 30%;
@@ -22,11 +29,14 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 3%;
+    padding: 10%;
     text-align: center;
+    background-color: var(--white);
+    border-radius: 1rem;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
 .music-player .cover {
-    width: 50%;
+    width: 75%;
     margin: 0.75rem auto;
 }
 .music-player h1 {
@@ -89,9 +99,12 @@ body {
     width: 2.5rem;
 }
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
-    background-color: initial;
-}
-button img {
-    width: 100%;
+    border-radius: 50%;
+    background-color: var(--white);
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.25rem rgba(0, 2, 12, 0.5));
 }
