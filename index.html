@@ -13,17 +13,17 @@
             <img class="cover" src="/assets/img/cover-1.jpg" alt="kida-cover">
             <h1>Kid A</h1>
             <p>Radiohead</p>
-            <audio>
+            <audio id="song">
                 <source src="/assets/audio/beyonce.mp3" type="audio/mp3">
             </audio>
             <input type="range" value="0" id="progress-bar">
             <div class="time">
-                <div class="current">0:00</div>
-                <div class="end">1:47</div>
+                <div id="current">0:00</div>
+                <div id="end"></div>
             </div>
             <div class="controls">
                 <button id="btn-backward"><img src="/assets/svg/fast_rewind_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg" alt="icon-backward"></button>
-                <button id="btn-play"><img src="/assets/svg/play_arrow_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg" alt="icon-play"></button>
+                <button class="btn-play play" id="btn-play-pause"><img src="/assets/svg/play_arrow_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg" alt="icon-play"></button>
                 <button id="btn-forward"><img src="/assets/svg/fast_forward_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg" alt="icon-forward"></button>
             </div>
             <!-- <div class="volume-wrapper">
