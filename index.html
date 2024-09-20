@@ -8,6 +8,32 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="wrapper">
+        <div class="music-player">
+            <img src="/assets/img/lemonade.png" alt="lemonade-cover">
+            <h1>Don't hurt yourself</h1>
+            <p>Beyonce</p>
+            <audio>
+                <source src="/assets/audio/beyonce.mp3" type="audio/mp3">
+            </audio>
+            <input type="range" value="0" id="progress-bar">
+            <div class="current-time">0:00</div>
+            <div class="controls">
+                <button id="btn-backward"><img src="/assets/svg/backward.png" alt="icon-backward"></button>
+                <button id="btn-play"><img src="/assets/svg/play.png" alt="icon-play"></button>
+                <button id="btn-forward"><img src="/assets/svg/forward.png" alt="icon-forward"></button>
+            </div>
+            <div class="end-time"></div>
+            <!-- <div class="volume-wrapper">
+                <div class="volume-button">
+                    <svg></svg>
+                </div>
+                <volume-slider>
+                    <input type="range" min="0" max="100" value="50">
+                </volume-slider>
+            </div> -->
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
