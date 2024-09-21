@@ -41,8 +41,10 @@ body {
 }
 .music-player h1 {
     font-size: 1.75rem;
+    line-height: 110%;
     letter-spacing: 0.5px;
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.3rem 0;
+    text-transform: capitalize;
 }
 .music-player p {
     font-size: 1rem;
