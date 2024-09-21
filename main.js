@@ -24,6 +24,7 @@ const playPauseBtn = document.getElementById('btn-play-pause');
 const playBackward = document.getElementById('btn-backward');
 const playForward = document.getElementById('btn-forward');
 const img = playPauseBtn.querySelector('img');
+const currentTime = document.getElementById('current');
 const endTime = document.getElementById('end');
 let isPlay = false;
 //Format duration time
@@ -52,17 +53,19 @@ const playPause = (time = 0) => {
         isPlay = false;
     }
 };
-//Update progress bar
+//Update progress bar and current time
 setInterval(() => {
     if (isPlay) {
         progressBar.value = song.currentTime;
+        currentTime.textContent = formatTime(song.currentTime);
+        paintProgressBar();
     }
 }, 500);
 //Fill progress bar with color when song is playing
 const paintProgressBar = () => {
     const value = progressBar.value;
     const percentage = (value / progressBar.max) * 100;
-    progressBar.style.setProperty('--value', `${percentage}%`);
+    progressBar.style.background = `linear-gradient(to right, #356f95 0%, #356f95 ${percentage}%, #dfdad9 ${percentage}%, #dfdad9 100%)`;
 };
 //Play song from chosen value on progress bar
 progressBar.oninput = () => {
