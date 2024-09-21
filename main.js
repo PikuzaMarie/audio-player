@@ -31,13 +31,13 @@ const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-}
+};
 //Set progress bar values and duration time
 song.onloadedmetadata = () => {
     progressBar.max = song.duration;
     progressBar.value = song.currentTime;
     endTime.textContent = formatTime(song.duration);
-}
+};
 //Play-Pause function
 let time;
 const playPause = (time = 0) => {
@@ -51,7 +51,7 @@ const playPause = (time = 0) => {
         song.pause();
         isPlay = false;
     }
-}
+};
 //Update progress bar
 setInterval(() => {
     if (isPlay) {
@@ -63,7 +63,7 @@ const paintProgressBar = () => {
     const value = progressBar.value;
     const percentage = (value / progressBar.max) * 100;
     progressBar.style.setProperty('--value', `${percentage}%`);
-}
+};
 //Play song from chosen value on progress bar
 progressBar.oninput = () => {
     paintProgressBar();
@@ -71,7 +71,7 @@ progressBar.oninput = () => {
     if (!isPlay) {
         playPause(song.currentTime);
     }
-}
+};
 //Play next song
 let playNum = 0;
 let playlistLength = playlist.length;
@@ -83,7 +83,7 @@ const playNext = () => {
     }
     changeTrack(playlist[playNum]);
     playPause();
-}
+};
 //Play previous song
 const playPrev = () => {
     if (playNum === 0) {
@@ -93,7 +93,7 @@ const playPrev = () => {
     }
     changeTrack(playlist[playNum]);
     playPause();
-}
+};
 //Change track
 const changeTrack = (track) => {
     const name = document.getElementById('name');
@@ -107,7 +107,7 @@ const changeTrack = (track) => {
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)), url(${track.cover})`;
     progressBar.value = 0;
     progressBar.style.setProperty('--value', '0%');
-}
+};
 //Add event listeners to controls
 playPauseBtn.addEventListener('click', () => playPause(song.currentTime));
 playForward.addEventListener('click', () => playNext());
