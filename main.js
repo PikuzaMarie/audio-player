@@ -69,7 +69,7 @@ progressBar.oninput = () => {
 let playNum = 0;
 let playlistLength = playlist.length;
 const playNext = () => {
-    if (playNum < playlistLength) {
+    if (playNum < playlistLength - 1) {
         playNum += 1;
     } else {
         playNum = 0;
