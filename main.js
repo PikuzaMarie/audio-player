@@ -93,11 +93,12 @@ const changeTrack = (track) => {
     const group = document.getElementById('group');
     const cover = document.getElementById('cover');
 
-    song.currentSrc = track.source;
+    song.src = track.source;
     name.textContent = track.name;
     group.textContent = track.group;
     cover.src = track.cover;
     cover.alt = `${track.name} cover`;
+    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)), url(${track.cover})`;
 }
 //Add event listeners to controls
 playPauseBtn.addEventListener('click', () => playPause(song.currentTime));

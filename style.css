@@ -35,7 +35,7 @@ body {
     border-radius: 1rem;
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
-.music-player .cover {
+.music-player #cover {
     width: 75%;
     margin: 0.75rem auto;
 }
