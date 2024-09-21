@@ -58,8 +58,15 @@ setInterval(() => {
         progressBar.value = song.currentTime;
     }
 }, 500);
+//Fill progress bar with color when song is playing
+const paintProgressBar = () => {
+    const value = progressBar.value;
+    const percentage = (value / progressBar.max) * 100;
+    progressBar.style.setProperty('--value', `${percentage}%`);
+}
 //Play song from chosen value on progress bar
 progressBar.oninput = () => {
+    paintProgressBar();
     song.currentTime = progressBar.value;
     if (!isPlay) {
         playPause(song.currentTime);
@@ -92,13 +99,14 @@ const changeTrack = (track) => {
     const name = document.getElementById('name');
     const group = document.getElementById('group');
     const cover = document.getElementById('cover');
-
     song.src = track.source;
     name.textContent = track.name;
     group.textContent = track.group;
     cover.src = track.cover;
     cover.alt = `${track.name} cover`;
     document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)), url(${track.cover})`;
+    progressBar.value = 0;
+    progressBar.style.setProperty('--value', '0%');
 }
 //Add event listeners to controls
 playPauseBtn.addEventListener('click', () => playPause(song.currentTime));
