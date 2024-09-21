@@ -2,20 +2,20 @@ const playlist = [
     {
         name: 'Everithing in its right place',
         group: 'Radiohead',
-        cover: '/assets/img/cover-1.jpg',
-        source: '/assets/audio/Radiohead - Everything In Its Right Place.mp3'
+        cover: '/audio-player/assets/img/cover-1.jpg',
+        source: '/audio-player/assets/audio/Radiohead - Everything In Its Right Place.mp3'
     },
     {
         name: 'Optimistic',
         group: 'Radiohead',
-        cover: '/assets/img/cover-2.jpg',
-        source: '/assets/audio/Radiohead - Optimistic.mp3'
+        cover: '/audio-player/assets/img/cover-2.jpg',
+        source: '/audio-player/assets/audio/Radiohead - Optimistic.mp3'
     },
     {
         name: 'The national anthem',
         group: 'Radiohead',
-        cover: '/assets/img/cover-3.jpg',
-        source: '/assets/audio/Radiohead - The National Anthem.mp3'
+        cover: '/audio-player/assets/img/cover-3.jpg',
+        source: '/audio-player/assets/audio/Radiohead - The National Anthem.mp3'
     }
 ]
 const song = document.getElementById('song');
@@ -43,12 +43,12 @@ song.onloadedmetadata = () => {
 let time;
 const playPause = (time = 0) => {
     if (!isPlay) {
-        img.src = "/assets/svg/pause_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg";
+        img.src = "/audio-player/assets/svg/pause_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg";
         song.currentTime = time;
         song.play();
         isPlay = true;
     } else {
-        img.src = "/assets/svg/play_arrow_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg";
+        img.src = "/audio-player/assets/svg/play_arrow_24dp_00020C_FILL0_wght400_GRAD0_opsz24.svg";
         song.pause();
         isPlay = false;
     }
